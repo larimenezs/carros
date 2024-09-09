@@ -2,7 +2,9 @@ from django.shortcuts import render
 from cars.models import Car
 
 def cars_view(request):
-    cars = Car.objects.filter(model__contains='Chevette Tubarão') 
+    search = request.GET.get('search')
+
+    cars = Car.objects.filter(model__contains=search) 
 
     return render(
         request, 
