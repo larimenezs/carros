@@ -6,7 +6,7 @@ def cars_view(request):
     search = request.GET.get('search')
 
     if search:
-        cars = cars.filter(model__contains=search) 
+        cars = cars.filter(model__icontains=search) 
 
     return render(
         request, 
