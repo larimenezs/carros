@@ -17,5 +17,8 @@ def cars_view(request):
     )
 
 def new_car_view(request):
-    new_car_form = CarForm()
+    if request.method == 'POST':
+        pass
+    else:
+        new_car_form = CarForm()
     return render(request, 'new_car.html', { 'new_car_form': new_car_form })
