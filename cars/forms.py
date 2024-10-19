@@ -9,3 +9,6 @@ class CarForm(forms.Form):
     plate = forms.CharField(max_length=10)
     value = forms.FloatField()
     photo = forms.ImageField()
+
+    def save(self):
+        
