@@ -102,7 +102,11 @@
     {% if cars %}
       {% for car in cars %}
         <div class="car-card">
+          {% if car.photo %}
           <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}">
+          {% else %}
+          <img src="/static/images/default-car.jpg" alt="Imagem não disponível">
+          {% endif %}
           <h2>{{ car.brand }} {{ car.model }}</h2>
           <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
         </div>
